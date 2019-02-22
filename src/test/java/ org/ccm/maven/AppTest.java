@@ -1,4 +1,4 @@
-package  org.ccm.maven;
+package  com.formast.maven;
 
 import static org.junit.Assert.assertTrue;
 
