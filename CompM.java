@@ -1,28 +1,37 @@
-package com.formafast.beans;
+package com.formafast.model;
 
-public class CompM {
-	private int id;  
-	private String name; 
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "comp92")
+public class CompM implements Serializable {
+
+	private static final long serialVersionUID = -3465813074586302847L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	@Column
+	private String name;
+	@Column
 	private String email;
-	private String company; 
-	private String country;
-	private String gender;
-	private int contact;
+	@Column
 	private String password;
-	public CompM() {
-		super();
-	}
-	public CompM(int id, String name, String email, String company, String country, String gender, int contact,String password) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.email = email;
-		this.company = company;
-		this.country = country;
-		this.gender = gender;
-		this.contact = contact;
-		this.password = password;
-	}
+	@Column
+	private String gender;
+	@Column
+	private String company;
+	@Column
+	private String country;
+	@Column
+	private String contact;
 	public int getId() {
 		return id;
 	}
@@ -41,6 +50,18 @@ public class CompM {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 	public String getCompany() {
 		return company;
 	}
@@ -53,25 +74,15 @@ public class CompM {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-	public int getContact() {
+	public String getContact() {
 		return contact;
 	}
-	public void setContact(int contact) {
+	public void setContact(String contact) {
 		this.contact = contact;
 	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 	
-	
-	
+
 }
